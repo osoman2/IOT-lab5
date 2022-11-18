@@ -32,19 +32,21 @@ function Weather({today, weekly}) {
       <Grid container spacing={5}>
         <Grid item xs={12} sm={6}>
         <Card className={classes.section} >
-          <LocalInfo today={today}/>
+          {/* <LocalInfo today={today}/> */}
+          <Today today={today}/>
         </Card>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        {/* <Grid item xs={12} sm={6}>
         <Card className={classes.section}>
           <Today today={today}/>
         </Card>
         </Grid>
+        
         <Grid item xs={12}>
           <Card className={classes.section}>
             <Weekly weekData={ weekly } />
           </Card>
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   )
