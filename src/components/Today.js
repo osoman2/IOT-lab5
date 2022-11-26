@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import pressure from '../assets/pressure.svg'
@@ -7,8 +7,8 @@ import humidity from '../assets/humidity.svg'
 import sunrise from '../assets/sunrise.svg'
 import sunset from '../assets/sunset.svg'
 import CardContent from '@material-ui/core/CardContent';
-
-
+import { Button } from '@material-ui/core';
+import Axios from 'axios';
 const useStyles = makeStyles((theme) => ({
     unit__icon: {
         width: 22,
@@ -44,35 +44,33 @@ const useStyles = makeStyles((theme) => ({
 
   }));
 
-function Today({today}) {
+function Today() {
     const classes = useStyles();
+    const [t_h,setT_H] = useState({t:"15",h:"16"});
+    const handleClick=()=>{
+        Axios.get("/routes/create-photo").then((response)=>{
+            const {t_,h_} = response;
+            setT_H({t:t_,h:h_}) 
+        });
+    }
     return (
         <CardContent>
             <div className={classes.main}>
                 <div className={classes.text__left}>
-                    <img src={`https://openweathermap.org/img/w/${today.icon}.png`} alt={today.icon} className={classes.weather__icon}/>
                     <Typography variant="h3" gutterBottom >
-                        {today.temp}°C
+                        {t_h.t}°C
                     </Typography>
-                    <Typography variant="h6" gutterBottom>
-                        {today.main}, {today.desc}
-                    </Typography>
+                    
                 </div>
                 <div className={classes.text__right}>
                     
-                    <Typography variant="h6"gutterBottom >
-                       <img src={sunrise} alt="Logo" className={classes.unit__icon}/> {today.sunrise} A.M.
-                    </Typography>
-                    <Typography variant="h6"gutterBottom >
-                        <img src={sunset} alt="Logo" className={classes.unit__icon}/> {today.sunset} P.M.
-                    </Typography>
+                <Button variant="contained" onClick={handleClick}>Update</Button>
                     
                 </div>
             </div>
                 <div>
-                    <img src={pressure} alt="Logo" className={classes.unit__icon1}/><span className={classes.span}>{today.pressure} hPa</span>
-                    <img src={humidity} alt="Logo" className={classes.unit__icon}/><span className={classes.span}>{today.humidity} %</span>
-                    <img src={wind_speed} alt="Logo" className={classes.unit__icon}/><span className={classes.span}>{today.wind} m/s N</span>
+
+                    <img src={humidity} alt="Logo" className={classes.unit__icon}/><span className={classes.span}>{t_h.h} %</span>
                 </div>
             </CardContent>    
     )

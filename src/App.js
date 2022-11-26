@@ -111,26 +111,14 @@ function App() {
 
   return (
     <>
-      <Search 
-        value={state.value}
-        data = {state}
-        showResult={(state.weatherInfo || state.error) && true}
-        change={handleInputChange}
-        submit={handleSearchCity} 
-      />
+      
       {
-        state.loading === true ? 
-        <Loader /> :
+      
       <div>  
-        {state.current.country !== undefined ? 
+        {
         <div className="weather">
-          <Weather today={state.current} weekly={state.weekInfo} />
-        </div> : 
-        state.error ? 
-        <p className="error__loc">Sorry! we donot have any information on specified location.</p> :
-        <div>
-
-        </div>
+          <Weather today={10} weekly={11} />
+        </div> 
         }
       </div>
       }
