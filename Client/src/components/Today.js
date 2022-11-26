@@ -48,7 +48,7 @@ function Today() {
     const classes = useStyles();
     const [t_h,setT_H] = useState({t:"15",h:"16"});
     const handleClick=()=>{
-        Axios.get("/routes/create-photo").then((response)=>{
+        Axios.get("/routes/datos").then((response)=>{
             const {t_,h_} = response;
             setT_H({t:t_,h:h_}) 
         });
