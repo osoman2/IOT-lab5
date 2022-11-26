@@ -70,7 +70,7 @@ function Today() {
             <div className={classes.main}>
                 <div className={classes.text__left}>
                     <Typography variant="h3" gutterBottom >
-                        {t_h.temperature}°C
+                        {t_h.t}°C
                     </Typography>
                     
                 </div>
@@ -82,7 +82,7 @@ function Today() {
             </div>
                 <div>
 
-                    <img src={humidity} alt="Logo" className={classes.unit__icon}/><span className={classes.span}>{t_h.humidity} %</span>
+                    <img src={humidity} alt="Logo" className={classes.unit__icon}/><span className={classes.span}>{t_h.h} %</span>
                 </div>
             </CardContent>    
     )
