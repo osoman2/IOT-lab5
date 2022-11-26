@@ -11,7 +11,7 @@ El cliente se inicia con:
 
 
 ### Server
-Referencias del paquete [coap para node.js]{https://github.com/AlCalzone/node-coap-client}
+Referencias del paquete [coap para node.js](https://github.com/AlCalzone/node-coap-client)
 El server se inicia con:
 >> npm run dev
 
