@@ -5,12 +5,13 @@ Para esta pregunta se propone la transmisión de datos con REACT, NODE, AIOCOAP 
 Paara correr la emulación de la página Web, dentro de cada modulo Client Server se debe escribir:
 >> npm install
 
-### CLient
+### Client
 El cliente se inicia con:
 >> npm start
 
 
 ### Server
+Referencias del paquete [coap para node.js]{https://github.com/AlCalzone/node-coap-client}
 El server se inicia con:
 >> npm run dev
 
