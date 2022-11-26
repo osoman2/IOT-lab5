@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import pressure from '../assets/pressure.svg'
@@ -48,11 +48,23 @@ function Today() {
     const classes = useStyles();
     const [t_h,setT_H] = useState({t:"15",h:"16"});
     const handleClick=()=>{
-        Axios.get("/routes/datos").then((response)=>{
-            const {t_,h_} = response;
-            setT_H({t:t_,h:h_}) 
+        Axios.get("http://localhost:3001/routes/datos").then((response)=>{
+            console.log(response);
+            const {temperature,humidity} = response.data;
+            setT_H({t:temperature,h:humidity}) 
         });
     }
+    useEffect(() => {
+        const timer = setInterval(() => {
+            Axios.get("http://localhost:3001/routes/datos").then((response)=>{
+            console.log(response);
+            const {temperature,humidity} = response.data;
+            setT_H({t:temperature,h:humidity}) 
+        });
+        }, 1000);
+      }, []);
+      
+      
     return (
         <CardContent>
             <div className={classes.main}>
@@ -64,7 +76,7 @@ function Today() {
                 </div>
                 <div className={classes.text__right}>
                     
-                <Button variant="contained" onClick={handleClick}>Update</Button>
+                {/* <Button variant="contained" onClick={handleClick}>Update</Button> */}
                     
                 </div>
             </div>

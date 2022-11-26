@@ -4,14 +4,15 @@ const coap = require("node-coap-client").CoapClient;
 const { StringDecoder } = require('node:string_decoder');
 const decoder = new StringDecoder('ascii');
 router.get("/datos",(req,res)=>{
-  coap
+  /* coap
     .request(
         "coap://{ip}:{port}/{test}",
-        "get" /* "get" | "post" | "put" | "delete" */,
+        "get" 
         
     )
     .then(response => { res.send(decoder.write(response))})
-    
+     */
+    res.send({temperature:"10",humidity:"5"})
     });
 
 
