@@ -6,7 +6,7 @@ const decoder = new StringDecoder('ascii');
 router.get("/datos",(req,res)=>{
   coap
     .request(
-        "coap://"/* string */,
+        "coap://{ip}:{port}/{test}",
         "get" /* "get" | "post" | "put" | "delete" */,
         
     )
