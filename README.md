@@ -13,3 +13,5 @@ El cliente se inicia con:
 ### Server
 El server se inicia con:
 >> npm run dev
+
+Cabe resaltar, que se debe hacer una modificación en el archivo Server/routes/routes.js, con la ip, el puerto y el nombre de la ruta establecida en el coap. En este caso quedando de la siguiente manera coap://<ip>:<port>/<test>
