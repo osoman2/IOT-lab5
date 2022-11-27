@@ -1,7 +1,7 @@
 # Laboratorio 5
 Para esta pregunta se propone la transmisión de datos con REACT, NODE, AIOCOAP y simple_library. Dónde, REACT y NODE se comunican vía HTTP, NODE, AIOCOAP y simple_library con COAP. Donde AIOCOAP será el server , y NODE y simple_library serán sus cliente en el entorno COAP.
 
-## Dependecias
+## Dependencias
 - Tener implementado el Coap Server y el Coap Client indicado en el [repositorio](https://github.com/rvmosquera/IoT_lab5_coap)
 
 
