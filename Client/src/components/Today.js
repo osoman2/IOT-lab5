@@ -61,7 +61,7 @@ function Today() {
             const {temperature,humidity} = response.data;
             setT_H({t:temperature,h:humidity}) 
         });
-        }, 1000);
+        }, 2000);
       }, []);
       
       
@@ -76,7 +76,7 @@ function Today() {
                 </div>
                 <div className={classes.text__right}>
                     
-                {/* <Button variant="contained" onClick={handleClick}>Update</Button> */}
+                { /*<Button variant="contained" onClick={handleClick}>Update</Button> */}
                     
                 </div>
             </div>
